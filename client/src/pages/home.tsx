@@ -4,6 +4,7 @@ import About from "@/components/sections/about";
 import Skills from "@/components/sections/skills";
 import Experience from "@/components/sections/experience";
 import Education from "@/components/sections/education";
+import Voluntary from "@/components/sections/voluntary";
 import Projects from "@/components/sections/projects";
 import Contact from "@/components/sections/contact";
 import ScrollToTop from "@/components/scroll-to-top";
@@ -17,6 +18,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Education />
+      <Voluntary />
       <Projects />
       <Contact />
       

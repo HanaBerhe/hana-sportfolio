@@ -107,7 +107,22 @@ export const generateResumePDF = () => {
   // Languages
   yPosition += 10;
   yPosition = addText('LANGUAGES', margin, yPosition, { fontSize: 14, style: 'bold' });
-  yPosition = addText('English (Native), Amharic (Fluent), Afan Oromo (Fluent), Af-Somali (Fluent), Tigrigna (Intermediate), Arabic (Intermediate)', margin, yPosition + 5, { fontSize: 10, maxWidth: pageWidth - 2 * margin, lineHeight: 4 });
+  yPosition = addText('Amharic (Native), English (Fluent), Afan Oromo (Fluent), Af-Somali (Fluent), Tigrigna (Intermediate), Arabic (Intermediate)', margin, yPosition + 5, { fontSize: 10, maxWidth: pageWidth - 2 * margin, lineHeight: 4 });
+
+  // Voluntary Participation
+  yPosition += 10;
+  yPosition = addText('VOLUNTARY PARTICIPATION', margin, yPosition, { fontSize: 14, style: 'bold' });
+  const voluntaryWork = [
+    'Human Rights Trainer & Facilitator - Leading training sessions and workshops on human rights awareness and advocacy',
+    'Women\'s Rights Advocate - Promoting gender equality and women\'s empowerment through educational programs',
+    'Child Rights Protection Leader - Developing programs focused on child protection and education rights',
+    'Disability Rights Facilitator - Advocating for accessibility and inclusion while facilitating awareness programs',
+    'Sustainable Peace Dialogue Leader & Initiator - Initiating and leading peace dialogue sessions on campus'
+  ];
+  
+  voluntaryWork.forEach((work) => {
+    yPosition = addText(`• ${work}`, margin, yPosition + 4, { fontSize: 10, maxWidth: pageWidth - 2 * margin, lineHeight: 4 });
+  });
 
   // Certifications
   yPosition += 10;
