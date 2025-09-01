@@ -1,7 +1,7 @@
 import jsPDF from 'jspdf';
 
 export const generateResumePDF = () => {
-  const pdf = new jsPDF();
+  const pdf = new jsPDF('p', 'mm', 'a4');
   
   // Set up the document
   const pageWidth = pdf.internal.pageSize.getWidth();

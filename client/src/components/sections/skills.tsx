@@ -54,8 +54,8 @@ export default function Skills() {
   ];
 
   const languages = [
-    { name: "English", level: "Native" },
-    { name: "Amharic", level: "Fluent" },
+    { name: "Amharic", level: "Native" },
+    { name: "English", level: "Fluent" },
     { name: "Afan Oromo", level: "Fluent" },
     { name: "Af-Somali", level: "Fluent" },
     { name: "Tigrigna", level: "Intermediate" },
