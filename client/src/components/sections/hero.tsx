@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import { generateResumePDF } from "@/utils/pdfGenerator";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -32,7 +34,7 @@ export default function Hero() {
             <span className="typing-animation" data-testid="hero-subtitle">Data Analyst & Software Developer</span>
           </div>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto" data-testid="hero-description">
-            Transforming complex data into actionable insights with expertise in Python, R, SQL, and modern web technologies. Based in Addis Ababa, Ethiopia.
+            Transforming complex data into actionable insights with expertise in Python, R, SQL, and modern web technologies. Available for freelance virtual assistant and data entry services. Based in Addis Ababa, Ethiopia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -49,6 +51,15 @@ export default function Hero() {
               data-testid="button-contact"
             >
               Get In Touch
+            </Button>
+            <Button
+              variant="outline"
+              onClick={generateResumePDF}
+              className="border border-border text-foreground px-8 py-3 hover:bg-muted flex items-center gap-2"
+              data-testid="button-download-resume"
+            >
+              <Download className="h-4 w-4" />
+              Download Resume
             </Button>
           </div>
         </div>

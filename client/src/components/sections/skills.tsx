@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { TrendingUp, Code, BarChart3 } from "lucide-react";
+import { TrendingUp, Code, BarChart3, Users } from "lucide-react";
 
 export default function Skills() {
   const skillCategories = [
@@ -38,6 +38,18 @@ export default function Skills() {
         { name: "Excel", level: 90 },
       ],
       tags: ["Statistical Analysis", "Predictive Modeling"],
+    },
+    {
+      title: "Virtual Assistant & Admin",
+      icon: Users,
+      backgroundImage: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+      alt: "Professional workspace with office tools",
+      skills: [
+        { name: "Data Entry", level: 95 },
+        { name: "Admin Support", level: 90 },
+        { name: "Client Communication", level: 85 },
+      ],
+      tags: ["Project Management", "Research", "Documentation"],
     },
   ];
 

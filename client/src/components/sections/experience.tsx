@@ -13,6 +13,15 @@ export default function Experience() {
       color: "accent",
     },
     {
+      title: "Virtual Assistant & Data Entry Specialist (Freelancer)",
+      company: "Freelance",
+      location: "Remote",
+      period: "Present",
+      description: "Providing comprehensive virtual assistance services including data entry, administrative support, research, and client communication. Managing multiple projects efficiently while maintaining high accuracy and meeting tight deadlines.",
+      tags: ["Virtual Assistant", "Data Entry", "Administrative Support", "Project Management"],
+      color: "green-500",
+    },
+    {
       title: "Software Engineer Intern",
       company: "Ministry of Tourism",
       location: "Addis Ababa",
@@ -55,14 +64,14 @@ export default function Experience() {
           <div className="space-y-12">
             {experiences.map((experience, index) => (
               <div key={index} className="relative pl-16 fade-in" data-testid={`experience-${index}`}>
-                <div className={`timeline-dot ${index === 0 ? 'bg-accent' : index === 1 ? 'bg-primary' : index === 2 ? 'bg-green-500' : 'bg-purple-500'}`}></div>
+                <div className={`timeline-dot ${index === 0 ? 'bg-accent' : index === 1 ? 'bg-green-500' : index === 2 ? 'bg-primary' : index === 3 ? 'bg-green-500' : 'bg-purple-500'}`}></div>
                 <Card className="p-6 shadow-lg border border-border">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
                       <h3 className="text-xl font-semibold text-foreground" data-testid={`experience-title-${index}`}>
                         {experience.title}
                       </h3>
-                      <p className={`font-medium ${index === 0 ? 'text-accent' : index === 1 ? 'text-primary' : index === 2 ? 'text-green-600' : 'text-purple-600'}`} data-testid={`experience-company-${index}`}>
+                      <p className={`font-medium ${index === 0 ? 'text-accent' : index === 1 ? 'text-green-600' : index === 2 ? 'text-primary' : index === 3 ? 'text-green-600' : 'text-purple-600'}`} data-testid={`experience-company-${index}`}>
                         {experience.company}
                       </p>
                     </div>

@@ -35,7 +35,7 @@ export default function About() {
                 A highly driven and adaptable Information Systems graduate with a strong background in data analysis and software development. I earned my B.Sc. in Information Systems from Addis Ababa University in July 2024.
               </p>
               <p className="text-muted-foreground" data-testid="text-experience-description">
-                I've gained proven business experience through internships at the Commercial Bank of Ethiopia and Unilever, applying technical expertise and analytical skills to deliver positive outcomes. I'm passionate about transforming data into meaningful insights and building robust software solutions.
+                I've gained proven business experience through internships at the Commercial Bank of Ethiopia and Unilever, applying technical expertise and analytical skills to deliver positive outcomes. I'm passionate about transforming data into meaningful insights and building robust software solutions. Currently available for freelance virtual assistant and data entry projects.
               </p>
               
               <div className="grid grid-cols-2 gap-4 pt-4">
@@ -53,6 +53,7 @@ export default function About() {
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm" data-testid="tag-data-analysis">Data Analysis</span>
                 <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm" data-testid="tag-machine-learning">Machine Learning</span>
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm" data-testid="tag-web-development">Web Development</span>
+                <span className="bg-green-500/10 text-green-600 px-3 py-1 rounded-full text-sm" data-testid="tag-freelancing">Available for Freelancing</span>
                 <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm" data-testid="tag-leadership">Leadership</span>
               </div>
             </div>
