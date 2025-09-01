@@ -1,0 +1,29 @@
+Hana Berhe Girmay  
+Data Analyst  
++251942684581 | hanagrimay@gmail.com | Addis Ababa, Ethiopia  
+
+PROFILE  
+A highly driven and adaptable information systems graduate with a strong background in data analysis and software development. Earned a B.Sc. in Information Systems from Addis Ababa University in July 2024. Gained proven business experience through internships at the Commercial Bank of Ethiopia and Unilever, applying technical expertise and analytical skills to deliver positive outcomes. Actively participated in extracurricular activities including planning and leading human rights awareness campaigns and sustainable peace talks. Served as a trainer and facilitator for university-wide initiatives such as Digital Literacy, demonstrating strong leadership and community engagement. Fluent in English, Arabic, Amharic, Afan Oromo, Af-Somali, and Tigrigna.
+
+WORK EXPERIENCE  
+Data Analyst | Commercial Bank of Ethiopia | Addis Ababa | Present                                                                        vertual asistanat and data entry frelancer (precent)
+Software Engineer Intern | Ministry of Tourism | Addis Ababa | 3 Months (September 2024)  
+Marketing Data Analyst (Contract) | Unilever | Addis Ababa | 3 Months (May 2024)  
+Information System Intern | Ethio Telecom (Information System Dept.) | Addis Ababa | 3 Months (June 2023)  
+Research and monitor the local real estate market. | September 2023                  
+EDUCATION  
+Addis Ababa University (2021–2024) | BA in Information Systems  
+
+CERTIFICATIONS  
+- Introduction to Data Analytics  
+- Introduction to Artificial Intelligence                                                                                                                 -Vrtuial Assistant  
+- Employability, Entrepreneurship, Servant Leadership, Public Service & Project Cycle Management (Mastercard Foundation)  
+- Serve Global (Digital Literacy) (Mastercard Foundation)  
+- Human Rights Awareness Program (AAU Center of Human Rights & Sweden Embassy)  
+- Sustainable Peace Dialogue (Ethiopian Law Association)  
+
+SKILLS  
+- Data Analysis & ML: Python (Pandas, NumPy, Scikit-learn), R, SQL, TensorFlow (Basic), Power BI, Tableau, Excel, Statistical Analysis, Predictive Modeling, Data Visualization  
+- Software Development: JavaScript (ES6+), React, Node.js, Express.js, HTML5, CSS3 (Tailwind CSS), REST APIs, Git & GitHub  
+- Languages: English (Native Level), Amharic (Fluent), Afan Oromo (Fluent), Af-Somali (Fluent), Tigrigna (Intermediate), Arabic (Intermediate)  
+- Other: Project Cycle Management, Employability Skills, Entrepreneurial Mindset, Servant Leadership, Public Service
