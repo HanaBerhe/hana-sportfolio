@@ -8,18 +8,33 @@ import Voluntary from "@/components/sections/voluntary";
 import Projects from "@/components/sections/projects";
 import Contact from "@/components/sections/contact";
 import ScrollToTop from "@/components/scroll-to-top";
+import SectionSeparator from "@/components/section-separator";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Navigation />
       <Hero />
+      
+      <SectionSeparator variant="gradient" />
       <About />
+      
+      <SectionSeparator variant="dots" />
       <Skills />
+      
+      <SectionSeparator variant="particles" />
       <Experience />
+      
+      <SectionSeparator variant="line" />
       <Education />
+      
+      <SectionSeparator variant="gradient" />
       <Voluntary />
+      
+      <SectionSeparator variant="dots" />
       <Projects />
+      
+      <SectionSeparator variant="particles" />
       <Contact />
       
       {/* Footer */}

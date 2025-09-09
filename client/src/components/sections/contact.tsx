@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,16 +15,65 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('wv3fyhLrqlIUwzWQB');
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would submit to a backend service
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsLoading(true);
+
+    try {
+      // EmailJS configuration
+      const serviceId = 'service_i0jamfh';
+      const templateId = 'template_iuap1pf';
+
+      // Template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Hana Berhe',
+        to_email: 'hananahberhe@gmail.com',
+        reply_to: formData.email,
+        // Additional fields for better email formatting
+        sender_name: formData.name,
+        sender_email: formData.email,
+        user_name: formData.name,
+        user_email: formData.email
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams
+      );
+
+      console.log('Email sent successfully:', response.status, response.text);
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      
+      // Reset form
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to Send Message",
+        description: "Something went wrong. Please try again or contact me directly at hananahberhe@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -37,7 +87,7 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "hanagrimay@gmail.com",
+      value: "hananahberhe@gmail.com",
     },
     {
       icon: Phone,
@@ -52,10 +102,10 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/hana-berhe-455042333", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/HanaBerhe", label: "GitHub" },
+    { icon: Twitter, href: "https://x.com/HGirmay89999", label: "Twitter" },
+    { icon: Instagram, href: "https://www.instagram.com/hana.berhe.1656?igsh=OHl4cmU1a2FpZzRw", label: "Instagram" },
   ];
 
   return (
@@ -109,8 +159,11 @@ export default function Contact() {
                       size="icon"
                       className="w-10 h-10 bg-primary/10 border-primary/20 hover:bg-primary hover:text-primary-foreground"
                       data-testid={`social-link-${social.label.toLowerCase()}`}
+                      asChild
                     >
-                      <IconComponent className="h-4 w-4" />
+                      <a href={social.href} target="_blank" rel="noopener noreferrer">
+                        <IconComponent className="h-4 w-4" />
+                      </a>
                     </Button>
                   );
                 })}
@@ -192,8 +245,9 @@ export default function Contact() {
                 type="submit" 
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                 data-testid="button-send-message"
+                disabled={isLoading}
               >
-                Send Message
+                {isLoading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>

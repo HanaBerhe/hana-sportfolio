@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import { generateResumePDF } from "@/utils/pdfGenerator";
+// import { generateResumePDF } from "@/utils/pdfGenerator";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -11,6 +11,21 @@ export default function Hero() {
         block: "start",
       });
     }
+  };
+
+  const downloadResume = () => {
+    // Option 1: Download from public folder (recommended)
+    const link = document.createElement('a');
+    link.href = '/resume/Hana_Berhe_Girmay_Resume.pdf';
+    link.download = 'Hana_Berhe_Girmay_Resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Option 2: Fallback to generated PDF if file not found
+    // Uncomment the line below and comment the above if you want to use generated PDF
+    // generateResumePDF();
   };
 
   return (
@@ -54,7 +69,7 @@ export default function Hero() {
             </Button>
             <Button
               variant="outline"
-              onClick={generateResumePDF}
+              onClick={downloadResume}
               className="border border-border text-foreground px-8 py-3 hover:bg-muted flex items-center gap-2"
               data-testid="button-download-resume"
             >

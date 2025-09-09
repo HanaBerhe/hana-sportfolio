@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PWA Icon Generator</title>
+    <style>
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .icon-container { display: inline-block; margin: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>PWA Icons Generator</h1>
+    <p>This page generates PWA icons for the portfolio. Open this in a browser and use the download links.</p>
+    
+    <script>
+        const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        
+        function createIcon(size) {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Create a gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#3b82f6');
+            gradient.addColorStop(1, '#1d4ed8');
+            
+            // Fill background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Add border radius effect
+            ctx.globalCompositeOperation = 'destination-in';
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, size * 0.1);
+            ctx.fill();
+            ctx.globalCompositeOperation = 'source-over';
+            
+            // Add letter 'H' for Hana
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.6}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('H', size / 2, size / 2);
+            
+            return canvas;
+        }
+        
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        sizes.forEach(size => {
+            const container = document.createElement('div');
+            container.className = 'icon-container';
+            
+            const canvas = createIcon(size);
+            const button = document.createElement('button');
+            button.textContent = `Download ${size}x${size}`;
+            button.onclick = () => downloadCanvas(canvas, `icon-${size}x${size}.png`);
+            
+            const label = document.createElement('div');
+            label.textContent = `${size}x${size}`;
+            
+            container.appendChild(canvas);
+            container.appendChild(document.createElement('br'));
+            container.appendChild(button);
+            container.appendChild(document.createElement('br'));
+            container.appendChild(label);
+            
+            document.body.appendChild(container);
+        });
+        
+        // Auto-download all icons
+        setTimeout(() => {
+            if (confirm('Auto-download all PWA icons?')) {
+                sizes.forEach(size => {
+                    const canvas = createIcon(size);
+                    downloadCanvas(canvas, `icon-${size}x${size}.png`);
+                });
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
