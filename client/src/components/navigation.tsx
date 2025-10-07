@@ -52,15 +52,18 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 nav-blur border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("home")}
-            className="text-xl font-bold text-primary hover:text-accent transition-colors"
+            className="text-xl font-bold text-primary hover:text-accent transition-colors flex items-center gap-3"
             data-testid="brand-logo"
           >
-            Hana Berhe
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-lg shadow-lg border-2 border-white hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ boxShadow: '0 0 15px rgba(59, 130, 246, 0.7)' }}>
+              <span className="drop-shadow-md font-bold">HB</span>
+            </div>
+            <span className="hidden sm:block font-semibold text-foreground">Hana Berhe</span>
           </button>
           
           {/* Desktop Navigation */}
@@ -69,7 +72,7 @@ export default function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors ${
+                className={`transition-colors font-medium ${
                   activeSection === item.id
                     ? "text-accent"
                     : "text-foreground hover:text-accent"
@@ -79,7 +82,9 @@ export default function Navigation() {
                 {item.label}
               </button>
             ))}
-            <ThemeToggle />
+            <div className="pl-4 border-l border-border">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
@@ -104,7 +109,7 @@ export default function Navigation() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left py-2 px-4 rounded-lg transition-colors ${
+                  className={`text-left py-2 px-4 rounded-lg transition-colors font-medium ${
                     activeSection === item.id
                       ? "text-accent bg-accent/10"
                       : "text-foreground hover:text-accent hover:bg-muted"
