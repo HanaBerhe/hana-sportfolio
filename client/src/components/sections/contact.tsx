@@ -20,7 +20,7 @@ export default function Contact() {
 
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init('wv3fyhLrqlIUwzWQB');
+    emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID || 'YOUR_EMAILJS_USER_ID');
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -29,8 +29,8 @@ export default function Contact() {
 
     try {
       // EmailJS configuration
-      const serviceId = 'service_i0jamfh';
-      const templateId = 'template_iuap1pf';
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_EMAILJS_SERVICE_ID';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_EMAILJS_TEMPLATE_ID';
 
       // Template parameters
       const templateParams = {
