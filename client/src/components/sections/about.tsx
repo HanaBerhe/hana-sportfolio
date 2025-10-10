@@ -11,14 +11,14 @@ export default function About() {
     <section id="about" className="py-20 bg-muted/30">
       <div className="max-w-6xl mx-auto px-6">
         <div 
-          ref={titleRef}
+          ref={titleRef as React.RefObject<HTMLDivElement>}
           className={`text-center mb-16 scroll-reveal ${titleVisible ? 'visible' : ''}`}
         >
           <h2 className="text-4xl font-bold text-foreground mb-4" data-testid="section-title-about">About Me</h2>
           <div className="w-20 h-1 bg-accent mx-auto"></div>
         </div>
         
-        <div ref={contentRef} className="grid md:grid-cols-2 gap-12 items-center">
+        <div ref={contentRef as React.RefObject<HTMLDivElement>} className="grid md:grid-cols-2 gap-12 items-center">
           <div className={`scroll-reveal-left ${contentVisible ? 'visible' : ''}`}>
             <Card className="p-8 shadow-lg">
               {/* Passport-sized photo */}
@@ -63,16 +63,16 @@ export default function About() {
               
               <div className={`grid grid-cols-2 gap-4 pt-4 scroll-reveal-scale ${contentVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.3s' }}>
                 <Card className="p-4 border border-border">
-                  <div className="text-2xl font-bold text-accent" data-testid="stat-graduate-year">2024</div>
+                  <div className="text-2xl font-bold text-accent dark:text-blue-400" data-testid="stat-graduate-year">2024</div>
                   <div className="text-sm text-muted-foreground">Graduate</div>
                 </Card>
                 <Card className="p-4 border border-border">
-                  <div className="text-2xl font-bold text-accent" data-testid="stat-languages-count">6+</div>
+                  <div className="text-2xl font-bold text-accent dark:text-blue-400" data-testid="stat-languages-count">6+</div>
                   <div className="text-sm text-muted-foreground">Languages</div>
                 </Card>
               </div>
               
-              <div ref={tagsRef} className="flex flex-wrap gap-2 pt-4">
+              <div ref={tagsRef as React.RefObject<HTMLDivElement>} className="flex flex-wrap gap-2 pt-4">
                 {[
                   { text: "Data Analysis", testId: "tag-data-analysis", color: "bg-primary/10 text-primary" },
                   { text: "Machine Learning", testId: "tag-machine-learning", color: "bg-accent/10 text-accent" },

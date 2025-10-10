@@ -89,8 +89,8 @@ export default function Experience() {
                         key={tag} 
                         className={`px-2 py-1 rounded text-xs ${
                           index % 2 === 0 
-                            ? 'bg-primary/10 text-primary' 
-                            : 'bg-accent/10 text-accent'
+                            ? 'bg-primary/10 text-primary dark:bg-blue-900/30 dark:text-blue-300' 
+                            : 'bg-accent/10 text-accent dark:bg-blue-900/30 dark:text-blue-300'
                         }`}
                         data-testid={`experience-tag-${tag.toLowerCase().replace(/\s+/g, '-')}`}
                       >
