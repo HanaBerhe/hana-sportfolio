@@ -74,7 +74,7 @@ export default function Navigation() {
                 onClick={() => scrollToSection(item.id)}
                 className={`transition-colors font-medium px-3 py-1 rounded-md ${
                   activeSection === item.id
-                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800"
+                    ? "text-blue-900 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800"
                     : "text-foreground hover:text-accent"
                 }`}
                 data-testid={`nav-${item.id}`}
@@ -111,7 +111,7 @@ export default function Navigation() {
                   onClick={() => scrollToSection(item.id)}
                   className={`text-left py-2 px-4 rounded-lg transition-colors font-medium ${
                     activeSection === item.id
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50"
+                      ? "text-blue-900 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/50"
                       : "text-foreground hover:text-accent hover:bg-muted"
                   }`}
                   data-testid={`mobile-nav-${item.id}`}
