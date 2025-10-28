@@ -60,6 +60,7 @@ export default function Skills() {
     { name: "Af-Somali", level: "Fluent" },
     { name: "Tigrigna", level: "Intermediate" },
     { name: "Arabic", level: "Intermediate" },
+    { name: "French", level: "Intermediate" },
   ];
 
   return (

@@ -67,7 +67,7 @@ export default function About() {
                   <div className="text-sm text-muted-foreground">Graduate</div>
                 </Card>
                 <Card className="p-4 border border-border">
-                  <div className="text-2xl font-bold text-accent dark:text-blue-400" data-testid="stat-languages-count">6+</div>
+                  <div className="text-2xl font-bold text-accent dark:text-blue-400" data-testid="stat-languages-count">7+</div>
                   <div className="text-sm text-muted-foreground">Languages</div>
                 </Card>
               </div>
@@ -75,10 +75,10 @@ export default function About() {
               <div ref={tagsRef as React.RefObject<HTMLDivElement>} className="flex flex-wrap gap-2 pt-4">
                 {[
                   { text: "Data Analysis", testId: "tag-data-analysis", color: "bg-primary/10 text-primary" },
-                  { text: "Machine Learning", testId: "tag-machine-learning", color: "bg-accent/10 text-accent" },
+                  { text: "Machine Learning", testId: "tag-machine-learning", color: "bg-blue-500/10 text-blue-600 dark:text-blue-400" },
                   { text: "Web Development", testId: "tag-web-development", color: "bg-primary/10 text-primary" },
                   { text: "Available for Freelancing", testId: "tag-freelancing", color: "bg-green-500/10 text-green-600" },
-                  { text: "Leadership", testId: "tag-leadership", color: "bg-accent/10 text-accent" }
+                  { text: "Leadership", testId: "tag-leadership", color: "bg-purple-500/10 text-purple-600 dark:text-purple-400" }
                 ].map((tag, index) => (
                   <span 
                     key={index}
