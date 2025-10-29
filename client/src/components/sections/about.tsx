@@ -58,7 +58,7 @@ export default function About() {
                 A highly driven and adaptable Information Systems graduate with a strong background in data analysis and software development. I earned my B.Sc. in Information Systems from Addis Ababa University in July 2024.
               </p>
               <p className="text-muted-foreground" data-testid="text-experience-description">
-                I've gained proven business experience through internships at the Commercial Bank of Ethiopia and Unilever, applying technical expertise and analytical skills to deliver positive outcomes. I'm passionate about transforming data into meaningful insights and building robust software solutions. Currently available for freelance virtual assistant and data entry projects.
+                I've gained proven business experience through various roles including a 2-month internship as a Software Engineer at the Ministry of Tourism, followed by a full-time position as a Data Analyst at Commercial Bank of Ethiopia where I currently work. During my studies, I also completed a 3-month contract with Unilever working remotely as a Marketing Data Analyst and Call Operator. I'm passionate about transforming data into meaningful insights and building robust software solutions. Currently available for freelance virtual assistant and data entry projects.
               </p>
               
               <div className={`grid grid-cols-2 gap-4 pt-4 scroll-reveal-scale ${contentVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.3s' }}>
