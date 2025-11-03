@@ -57,13 +57,13 @@ export default function Navigation() {
         <div className="flex items-center justify-between w-full">
           <button
             onClick={() => scrollToSection("home")}
-            className="text-xl font-bold text-primary hover:text-accent transition-colors flex items-center gap-3"
+            className="text-xl font-bold text-primary hover:text-accent transition-colors flex items-center gap-3 min-w-0"
             data-testid="brand-logo"
           >
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-lg shadow-lg border-2 border-white hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-lg shadow-lg border-2 border-white hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex-shrink-0">
               <span className="drop-shadow-md font-bold">HB</span>
             </div>
-            <span className="hidden sm:block font-semibold text-foreground">Hana Berhe</span>
+            <span className="hidden sm:block font-semibold text-foreground truncate">Hana Berhe</span>
           </button>
           
           {/* Desktop Navigation */}
@@ -72,7 +72,7 @@ export default function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors font-medium px-3 py-1 rounded-md ${
+                className={`transition-colors font-medium px-3 py-1 rounded-md whitespace-nowrap ${
                   activeSection === item.id
                     ? "text-blue-900 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800"
                     : "text-foreground hover:text-accent"
@@ -88,7 +88,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-2 flex-shrink-0">
             <ThemeToggle />
             <Button
               variant="ghost"
