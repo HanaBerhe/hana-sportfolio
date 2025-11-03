@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { CustomButton } from "@/components/ui/custom-button";
 import { Download } from "lucide-react";
 // import { generateResumePDF } from "@/utils/pdfGenerator";
 
@@ -29,7 +29,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20">
       {/* Modern tech workspace background */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -42,32 +42,32 @@ export default function Hero() {
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <div className="fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6" data-testid="hero-title">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6" data-testid="hero-title">
             Hi, I'm <span className="gradient-text">Hana</span>
           </h1>
-          <div className="text-2xl md:text-3xl text-muted-foreground mb-8">
+          <div className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-8">
             <span className="typing-animation" data-testid="hero-subtitle">Data Analyst & Software Developer</span>
           </div>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto" data-testid="hero-description">
             Transforming complex data into actionable insights with expertise in Python, R, SQL, and modern web technologies. Available for freelance virtual assistant and data entry services. Based in Addis Ababa, Ethiopia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+            <CustomButton
               onClick={() => scrollToSection("projects")}
               className="bg-primary text-primary-foreground px-8 py-3 hover:bg-primary/90"
               data-testid="button-view-work"
             >
               View My Work
-            </Button>
-            <Button
+            </CustomButton>
+            <CustomButton
               variant="outline"
               onClick={() => scrollToSection("contact")}
               className="border border-border text-foreground px-8 py-3 hover:bg-muted"
               data-testid="button-contact"
             >
               Get In Touch
-            </Button>
-            <Button
+            </CustomButton>
+            <CustomButton
               variant="outline"
               onClick={downloadResume}
               className="border border-border text-foreground px-8 py-3 hover:bg-muted flex items-center gap-2"
@@ -75,7 +75,7 @@ export default function Hero() {
             >
               <Download className="h-4 w-4" />
               Download Resume
-            </Button>
+            </CustomButton>
           </div>
         </div>
       </div>

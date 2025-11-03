@@ -52,15 +52,15 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+        <div className="flex items-center justify-between w-full">
           <button
             onClick={() => scrollToSection("home")}
             className="text-xl font-bold text-primary hover:text-accent transition-colors flex items-center gap-3"
             data-testid="brand-logo"
           >
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-lg shadow-lg border-2 border-white hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ boxShadow: '0 0 15px rgba(59, 130, 246, 0.7)' }}>
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-lg shadow-lg border-2 border-white hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               <span className="drop-shadow-md font-bold">HB</span>
             </div>
             <span className="hidden sm:block font-semibold text-foreground">Hana Berhe</span>

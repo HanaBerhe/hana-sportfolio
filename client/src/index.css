@@ -259,7 +259,6 @@
   border-radius: 50%;
   opacity: 1;
   animation: float 10s infinite linear;
-  box-shadow: 0 0 10px hsl(var(--accent) / 0.8);
 }
 
 @keyframes float {
