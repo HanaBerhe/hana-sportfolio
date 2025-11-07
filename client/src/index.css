@@ -146,19 +146,6 @@
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* New Scroll Animations */
 .scroll-reveal {
   opacity: 0;
@@ -320,11 +307,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 40;
+  z-index: 1000;
   background: hsl(var(--background));
   border-bottom: 1px solid hsl(var(--border));
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .mobile-nav-menu {
@@ -332,6 +320,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  min-height: 100%;
+  padding-bottom: 2rem;
 }
 
 .mobile-nav-item {
@@ -341,6 +331,11 @@
   transition: all 0.2s ease;
   font-weight: 500;
   width: 100%;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: hsl(var(--foreground));
+  cursor: pointer;
 }
 
 .mobile-nav-item:hover {
@@ -357,4 +352,18 @@
   background: hsl(var(--blue-950) / 0.5);
   color: hsl(var(--blue-400));
   border: 1px solid hsl(var(--blue-800));
+}
+
+/* Ensure fade-in animation works properly */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

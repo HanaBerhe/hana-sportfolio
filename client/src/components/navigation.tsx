@@ -51,6 +51,34 @@ export default function Navigation() {
     { id: "contact", label: "Contact" },
   ];
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const navElement = document.querySelector('nav');
+      if (isOpen && navElement && !navElement.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
@@ -103,24 +131,32 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Backdrop and Menu */}
         {isOpen && (
-          <div className="mobile-nav-container md:hidden">
-            <div className="mobile-nav-menu">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`mobile-nav-item ${
-                    activeSection === item.id ? "active" : ""
-                  }`}
-                  data-testid={`mobile-nav-${item.id}`}
-                >
-                  {item.label}
-                </button>
-              ))}
+          <>
+            <div 
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+              onClick={() => setIsOpen(false)}
+            />
+            <div className="fixed top-16 left-0 right-0 bottom-0 bg-background z-50 md:hidden overflow-y-auto">
+              <div className="flex flex-col p-4 space-y-2">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`text-left py-3 px-4 rounded-lg transition-colors font-medium w-full text-base ${
+                      activeSection === item.id
+                        ? "text-blue-900 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/50"
+                        : "text-foreground hover:text-accent hover:bg-muted"
+                    }`}
+                    data-testid={`mobile-nav-${item.id}`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>
