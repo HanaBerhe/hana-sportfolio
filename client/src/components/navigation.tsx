@@ -138,7 +138,7 @@ export default function Navigation() {
               className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
               onClick={() => setIsOpen(false)}
             />
-            <div className="fixed top-16 left-0 right-0 bottom-0 bg-background z-50 md:hidden overflow-y-auto">
+            <div className="fixed top-16 left-0 right-0 h-1/2 bg-background z-50 md:hidden overflow-y-auto border-t border-border rounded-t-xl shadow-lg">
               <div className="flex flex-col p-4 space-y-2">
                 {navItems.map((item) => (
                   <button
