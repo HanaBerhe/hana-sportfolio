@@ -67,12 +67,12 @@ export default function Navigation() {
           </button>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors font-medium px-3 py-1 rounded-md whitespace-nowrap ${
+                className={`transition-colors font-medium px-2 py-1 rounded-md text-sm lg:text-base lg:px-3 lg:py-1.5 whitespace-nowrap ${
                   activeSection === item.id
                     ? "text-blue-900 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800"
                     : "text-foreground hover:text-accent"
@@ -82,7 +82,7 @@ export default function Navigation() {
                 {item.label}
               </button>
             ))}
-            <div className="pl-4 border-l border-border">
+            <div className="pl-2 lg:pl-4 border-l border-border">
               <ThemeToggle />
             </div>
           </div>
@@ -94,7 +94,9 @@ export default function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
+              className="relative z-50"
               data-testid="mobile-menu-toggle"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -103,16 +105,14 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
-            <div className="flex flex-col space-y-2">
+          <div className="mobile-nav-container md:hidden">
+            <div className="mobile-nav-menu">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left py-2 px-4 rounded-lg transition-colors font-medium ${
-                    activeSection === item.id
-                      ? "text-blue-900 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/50"
-                      : "text-foreground hover:text-accent hover:bg-muted"
+                  className={`mobile-nav-item ${
+                    activeSection === item.id ? "active" : ""
                   }`}
                   data-testid={`mobile-nav-${item.id}`}
                 >
